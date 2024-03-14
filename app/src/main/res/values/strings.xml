@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">Assignment4</string>
+    <string name="enter_username">Username</string>
+  <string name="enter_password">Password</string>
+  <string name="login">LOGIN</string>
+    <string name="equipment_description">Hardware tools on a table.</string>
 </resources>
