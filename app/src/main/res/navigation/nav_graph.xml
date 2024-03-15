@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_login"
-        android:name="com.cs4520.assignment4.LoginFragment"
+        android:name="com.cs4520.assignment4.view.LoginFragment"
         android:label="Login"
         tools:layout="@layout/login_fragment">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/fragment_product_list"
-        android:name="com.cs4520.assignment4.ProductListFragment"
+        android:name="com.cs4520.assignment4.view.ProductListFragment"
         android:label="ProductList"
         tools:layout="@layout/product_list_fragment"/>
 

@@ -3,7 +3,7 @@ package com.cs4520.assignment4.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.cs4520.assignment4.Product
+import com.cs4520.assignment4.model.Product
 
 @Dao
 interface ProductDao {

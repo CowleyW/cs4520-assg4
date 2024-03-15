@@ -1,4 +1,4 @@
-package com.cs4520.assignment4
+package com.cs4520.assignment4.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

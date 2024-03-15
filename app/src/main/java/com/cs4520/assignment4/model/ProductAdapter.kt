@@ -1,4 +1,4 @@
-package com.cs4520.assignment4
+package com.cs4520.assignment4.model
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.cs4520.assignment4.R
 
 class ProductAdapter (private val products: List<Product>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     inner class ViewHolder(productView : View) : RecyclerView.ViewHolder(productView) {

@@ -1,5 +1,6 @@
 package com.cs4520.assignment4
 
+import com.cs4520.assignment4.model.Product
 import retrofit2.http.GET
 
 object Api {
