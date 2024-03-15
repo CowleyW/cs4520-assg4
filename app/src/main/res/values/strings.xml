@@ -4,4 +4,5 @@
   <string name="enter_password">Password</string>
   <string name="login">LOGIN</string>
     <string name="equipment_description">Hardware tools on a table.</string>
+    <string name="no_products_available">No products available</string>
 </resources>
