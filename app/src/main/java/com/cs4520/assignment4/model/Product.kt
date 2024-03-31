@@ -9,6 +9,6 @@ data class Product(
     @PrimaryKey(autoGenerate = true) val id : Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "type") val type : String,
-    @ColumnInfo(name = "expirationDate") val expirationDate: String?,
+    @ColumnInfo(name = "expiryDate") val expiryDate: String?,
     @ColumnInfo(name = "price") val price: Double
 )

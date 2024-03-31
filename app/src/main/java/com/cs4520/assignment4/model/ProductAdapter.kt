@@ -43,10 +43,10 @@ class ProductAdapter (private val products: List<Product>) : RecyclerView.Adapte
         }
 
         holder.productName.text = product.name
-        if (product.expirationDate == null) {
+        if (product.expiryDate == null) {
             holder.productExpiration.visibility = View.GONE
         } else {
-            holder.productExpiration.text = product.expirationDate
+            holder.productExpiration.text = product.expiryDate
         }
         holder.productPrice.text = "$ " + product.price.toString()
 

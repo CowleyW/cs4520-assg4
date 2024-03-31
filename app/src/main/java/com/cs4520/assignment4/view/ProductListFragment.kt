@@ -38,13 +38,13 @@ class ProductListFragment : com.cs4520.assignment4.view.View, Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val db = Room.databaseBuilder(requireContext(), Database::class.java, "product-db").build()
-        val viewModel: ProductViewModel = ViewModelProvider(this)[MVVMProductViewModel::class.java]
-        viewModel.usingDb(db, this)
-
-        CoroutineScope(Dispatchers.IO).launch {
-            viewModel.onVisit()
-        }
+//        val db = Room.databaseBuilder(requireContext(), Database::class.java, "product-db").build()
+//        val viewModel: ProductViewModel = ViewModelProvider(this)[MVVMProductViewModel::class.java]
+//        viewModel.usingDb(db, this)
+//
+//        CoroutineScope(Dispatchers.IO).launch {
+//            viewModel.onVisit()
+//        }
     }
 
     override fun onDestroyView() {

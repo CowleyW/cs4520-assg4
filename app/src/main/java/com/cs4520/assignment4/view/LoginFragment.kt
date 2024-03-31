@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.room.Room
 import com.cs4520.assignment4.R
 import com.cs4520.assignment4.databinding.LoginFragmentBinding
+import com.cs4520.assignment4.viewmodel.MVVMProductViewModel
 
 class LoginFragment : Fragment() {
     private var _binding: LoginFragmentBinding? = null

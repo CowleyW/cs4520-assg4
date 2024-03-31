@@ -1,41 +1,44 @@
 package com.cs4520.assignment4.viewmodel
 
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
+import com.cs4520.assignment4.R
 import com.cs4520.assignment4.database.Database
-import com.cs4520.assignment4.model.Model
+import com.cs4520.assignment4.model.Product
 import com.cs4520.assignment4.model.ProductModel
-import com.cs4520.assignment4.view.View
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.Flow
 
 interface ProductViewModel {
-    fun usingDb(db: Database, frag: View)
-    suspend fun onVisit()
+    fun withDB(db: Database)
+    fun getRowData(type: String): Pair<Color, Int>
+    suspend fun getProducts(): List<Product>
 }
 
-class MVVMProductViewModel : ProductViewModel, ViewModel() {
-    private lateinit var model: Model
-    private lateinit var view: View
+class MVVMProductViewModel() : ProductViewModel, ViewModel() {
+    private lateinit var productModel: ProductModel
 
-    override fun usingDb(db: Database, frag: View) {
-        model = ProductModel(db)
-        view = frag
+    override fun withDB(db: Database) {
+        productModel = ProductModel(db)
     }
 
-    override suspend fun onVisit() {
-        view.showLoadingBar()
-        val products = model.fetchData()
-        if (products.isNotEmpty()) {
-            model.fillDb(products)
+    override suspend fun getProducts(): List<Product> {
+        val data = productModel.fetchData()
 
-            CoroutineScope(Dispatchers.Main).launch {
-                view.showProducts(products)
-            }
+        println("viewmodel: " + data.size)
+        return data
+    }
+
+    override fun getRowData(type : String): Pair<Color, Int> {
+        return if (type == "Food") {
+            Pair(
+                Color(0xFFFFD965),
+                R.drawable.food_cs4520
+            )
         } else {
-            CoroutineScope(Dispatchers.Main).launch {
-                view.displayError()
-            }
+            Pair(
+                Color(0xFFE06666),
+                R.drawable.equipment_cs4520
+            )
         }
     }
 }

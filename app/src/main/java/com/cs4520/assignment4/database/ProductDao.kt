@@ -4,15 +4,16 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.cs4520.assignment4.model.Product
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ProductDao {
     @Query("SELECT * FROM product")
-    fun getAll(): List<Product>
+    suspend fun getAll(): List<Product>
 
     @Insert
-    fun insertAll(vararg products: Product)
+    suspend fun insertAll(vararg products: Product)
 
     @Query("DELETE FROM product")
-    fun deleteAll()
+    suspend fun deleteAll()
 }
